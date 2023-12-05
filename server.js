@@ -1,7 +1,7 @@
 const express = require('express');
 const http = require('http');
 const app = express();
-const PORT = 5001;
+const PORT = 5000;
 
 const server = http.createServer(app);
 
