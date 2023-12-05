@@ -7,6 +7,7 @@ const server = http.createServer(app);
 
 app.get('/', (req, res) => {
     // console.log('express jwt => ', req.session.user);
+    console.log("1");
     res.send('<h2>Reseed API</h2>');
 });
 
