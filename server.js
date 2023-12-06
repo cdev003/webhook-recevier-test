@@ -19,6 +19,21 @@ app.use('/webhook', (req, res) => {
     // console.log('express jwt => ', req.session.user);
     console.log(req);
 });
+
+app.use((req, res, next) => {
+    next(createHttpError(404));
+});
+
+//* Error Handler
+app.use((err, req, res) => {
+    res.status(err.status || 500).json({
+        error: {
+            status: err.status || 500,
+            message: err.message
+        }
+    });
+});
+
 server.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
